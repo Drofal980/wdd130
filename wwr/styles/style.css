@@ -42,7 +42,7 @@
     text-align: center;
 }
 
-#hero-img {
+.hero img {
     width: 100%;
 }
 
@@ -172,6 +172,10 @@ main section img {
 }
 .logo {
     width: 80px;
+}
+
+.logo img {
+    width: 200px;
 }
 
 .meteors-card,
