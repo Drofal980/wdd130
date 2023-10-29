@@ -22,7 +22,7 @@
     --paragraph-background-color: #242b33;
     --nav-link-color: white;
     --background-color: #1e1e1f;
-    --nav-background-color: #242b33;
+    --nav-background-color: rgba(36, 43, 51, 0.85);
     --nav-hover-link-color: #c1cad6;
     --nav-hover-background-color: #2d5c7f;
 }
@@ -32,11 +32,25 @@
     margin: 0 auto;
 }
 
-#background {
-    height: 725px;
-    background-color: var(--secondary-color);
+.hero {
+    display: grid;
+    grid-template-columns: 1fr 3fr 1fr;
+    margin-top: 0px;
 }
 
+#hero-msg {
+    grid-column: 2/3;
+    grid-row: 1/2;
+    margin-top: 100px;
+    z-index: 1;
+    text-align: center;
+}
+
+.hero-box {
+    grid-column: 1/4;
+    grid-row: 1/3;
+    z-index: -1;
+}
 #hero-msg h1,
 #hero-msg h4 {
     text-align: center;
@@ -44,10 +58,15 @@
 
 .hero img {
     width: 100%;
+    margin: 0 auto;
+    grid-column: 1/4;
+    grid-row: 1/3;
 }
 
-#logo_link {
+.logo_link {
     padding-top: 5px;
+    justify-self: center;
+    align-self: center;
 }
 
 body {
@@ -59,20 +78,30 @@ body {
 }
 
 header {
-    background-color: var(--secondary-color);
+    display: grid;
+    grid-template-columns: 150px auto;
+}
+
+.logo_link img {
+    width: 100%;
+    max-width: fit-content;
+}
+
+nav {
+    display: flex;
+    justify-content: space-around;
+    /* flex-wrap: wrap; */
 }
 
 nav a {
     text-decoration: none;
     color: var(--nav-link-color);
-    text-align: center;
-    background-color: var(--nav-background-color);
+    background-color: var(--background-color);;
     padding: 35px;
 }
 
 nav a:hover {
-    color: var(--nav-hover-link-color);
-    background-color: var(--nav-hover-background-color);
+    color: var(--nav-hover-background-color);
 }
 
 main section {
@@ -94,6 +123,9 @@ footer {
     background-color: var(--secondary-color);
     padding: 25px 50px;
     margin-top: 200px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
 }
 
 footer a {
@@ -126,10 +158,12 @@ main section img {
     font-family: var(--heading-font);
     font-size: 2em;
     margin-top: 10px;
+    margin: 0 auto;
 }
 
 .button-box {
     text-align: center;
+    margin-top: 50px;
 }
 
 .book,
@@ -146,16 +180,23 @@ main section img {
 
 .book:hover,
 .join:hover {
-    color: var(--nav-hover-link-color);
-    background-color: var(--accent1-color);
+    color: var(--nav-hover-background-color);
+    background-color: var(--nav-background-color);
 }
 
+.home-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+}
 .msg {
     color: var(--paragraph-color-on-color);
-    background-color: var(--secondary-color);
+    background-color: var(--background-color);
     font-family: var(--paragraph-font);
     line-height: 1.5em;
     padding: 35px;
+    grid-column: 6/10;
+    grid-row: 6/7;
+    box-shadow: 5px 5px 10px black;
 }
 
 .msg h2 {
@@ -171,25 +212,98 @@ main section img {
 .icon {
     width: 80px;
     padding-top: 10px;
-}
-.logo {
-    width: 80px;
-}
-
-.logo img {
-    width: 200px;
+    filter: invert(100%);
 }
 
 .meteors-card,
 .asteroid-belt-card,
 .nebulas-card {
-    margin: 200px;
+    margin: 200px 0;
+    width: 100%;
+}
+
+.meteors-card {
+    grid-column: 2/4;
+    grid-row: 2/3;
+}
+.asteroid-belt-card {
+    grid-column: 5/7;
+    grid-row: 2/3;
+}
+
+.nebulas-card {
+    grid-column: 8/10;
+    grid-row: 2/3;
 }
 
 .card-img {
     border: 10px solid black;
+    transition: transform 0.5s;
+    box-shadow: 5px 5px 10px black;
 }
 
+.card-img:hover {
+    opacity: 0.6;
+    transform: scale(1.1);
+}
 .mountains-nebula {
+    width: 100%;
     margin: 100px 0;
+    grid-column: 2/7;
+    grid-row: 5/8;
+    box-shadow: 5px 5px 10px black;
+}
+
+.card-img, .mountains {
+    width: 100%;
+}
+
+#background {
+    height: 725px;
+    background-color: var(--secondary-color);
+    grid-column: 1/11;
+    grid-row: 4/9;
+}
+
+@media screen and (max-width: 900px) {
+    #hero, .home-grid {
+        display: block;
+        height: auto;
+    }
+    nav, footer {
+        flex-direction: column;
+        text-align: center;
+    }
+    nav a {
+        display: block;
+        padding: 15px;
+    }
+    #hero {
+        margin-top: 0;
+    }
+    #hero-msg {
+        margin-top: 0;
+    }
+    #hero-msg h4 {
+        display: none;
+    }
+    .home-title {
+        font-size: 25px;
+        color: var(--headline-color-on-color);
+    }
+    .meteors-card, .asteroid-belt-card, .nebulas-card { 
+        margin: 50px auto;
+        width: 60%;
+    }
+    #background {
+        display: none;
+    }
+    .mountains-nebula, .msg {
+        width: 80%;
+        display: block;
+        margin: 0 auto;
+    }
+    footer {
+        margin-top: 25px;
+    }
 }
