@@ -282,7 +282,7 @@ main section img {
         margin-top: 0;
     }
     #hero-msg {
-        margin-top: 0;
+        margin-top: 50px;
     }
     #hero-msg h4 {
         display: none;
