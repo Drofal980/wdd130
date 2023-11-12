@@ -5,7 +5,7 @@
     --primary-color: #242b33;
     --secondary-color: #212349;
     --accent1-color: #2d5c7f;
-    --accent2-color: #c1cad6;
+    --accent2-color: #24282e;
 
     --heading-font: "Kiona", Lato, Helvetica, sans-serif                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     ;
     --paragraph-font: "Kanit", Lato, Helvetica, sans-serif;
@@ -268,6 +268,95 @@ main section img {
     grid-column: 1/11;
     grid-row: 4/9;
 }
+
+/* About us page  */
+.aboutus-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 10fr 1fr 10fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 20fr 1fr 1fr 1fr 20fr 1fr 1fr 1fr 20fr 1fr 1fr;
+    max-width: 1600px;
+}
+
+.aboutus-grid-item-1 {
+    width: 100%;
+    grid-column: 2/7;
+    grid-row: 2/4;
+}
+
+.aboutus-grid-item-1 img {
+    width: 100%;
+    height: auto;
+    box-shadow: 5px 5px 10px black;
+}
+
+.aboutus-grid-item-1-msg {
+    color: var(--paragraph-color-on-color);
+    background-color: var(--secondary-color);
+    font-family: var(--paragraph-font);
+    font-size: 1.3vw;
+    text-align: center;
+    padding: 35px;
+    grid-column: 3/4;
+    grid-row: 3/5;
+    box-shadow: 5px 5px 10px black;
+}
+
+.aboutus-grid-item-2 {
+    width: 100%;
+    grid-column: 2/7;
+    grid-row: 6/9;
+}
+
+.aboutus-grid-item-2 img {
+    width: 100%;
+    height: auto;
+    box-shadow: 5px 5px 10px black;
+}
+
+.aboutus-grid-item-2-msg {
+    color: var(--paragraph-color-on-color);
+    background-color: var(--secondary-color);
+    font-family: var(--paragraph-font);
+    font-size: 1.5vw;
+    text-align: left;
+    padding: 35px;
+    grid-column: 5/6;
+    grid-row: 7/9;
+    box-shadow: 5px 5px 10px black;
+}
+
+.aboutus-grid-item-2-msg p, h1 {
+    text-align: center;
+}
+
+.aboutus-grid-item-3 {
+    width: 100%;
+    grid-column: 2/7;
+    grid-row: 10/12;
+}
+
+.aboutus-grid-item-3 img {
+    width: 100%;
+    height: auto;
+    box-shadow: 5px 5px 10px black;
+}
+
+.aboutus-grid-item-3-msg {
+    color: var(--paragraph-color-on-color);
+    background-color: var(--secondary-color);
+    font-family: var(--paragraph-font);
+    font-size: 1.2vw;
+    text-align: center;
+    padding: 35px;
+    grid-column: 3/4;
+    grid-row: 11/13;
+    box-shadow: 5px 5px 10px black;
+}
+
+.aboutus-grid-item-3-msg li {
+    text-align: left;
+}
+
 
 @media screen and (max-width: 900px) {
     #hero, .home-grid {
