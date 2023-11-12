@@ -341,6 +341,11 @@ main section img {
     box-shadow: 5px 5px 10px black;
 }
 
+.aboutus-grid-item-3-msg li {
+    font-weight: bold;
+    text-decoration: underline;
+}
+
 .aboutus-grid-item-3-msg {
     color: var(--paragraph-color-on-color);
     background-color: var(--secondary-color);
